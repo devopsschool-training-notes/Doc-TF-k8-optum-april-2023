@@ -1,0 +1,112 @@
+LAB infra -?
+
+START - 10 AM IST
+End - 6 PM IST
+
+LUNCH - 1:30 PM IST - 2:30 PM IST
+BREAK - 15 mins
+	11:30
+	4:00
+====================================
+One Assignment - > How to submit??
+
+Any Lab connectivity Issue please call this number:9346149458
+=================================================================
+
+
+What is Docker?
+------------------------------
+Container mgmt tool
+
+Go
+
+Version
+	Community
+	Enterprise
+
+Docker Engine
+
+20.X
+
+
+tool
+	- save cost
+				PS					VS				Container		
+				1app/8GB			4app/8GB		8app/8GB
+				
+				less CPU - less ram - less storage - NO OS lice cost
+
+	- save time
+				PS					VM				Container
+				1 APP				1 APP			1 APP		1000
+				1 Day				5 min			1 sEC		1 sEC
+
+	- imp software quality
+				-- qUALITY cODING - qUALITY TESTING
+
+mgmt
+
+	CREATE -> START -> STOP -> START -> RESTART -> PAUSE -> UNPAUSE -> KILL -> REMOVE
+
+			
+Container	
+
+======================================================
+wHAT ARE THE RESOURCES WE NEED TO ONE app?
+
+HARDWARE
+		OS
+			KERNEL
+				  Namespace			CAN		ALLOWED in OS		NEED for 1 APP
+						USER			N		N				1
+						PIDTREE		N		1				1		
+						MOUNT			N		1				1
+						NET			N		1				1
+				  CGROUPS
+						Assign CPU and RAM to the PID
+
+				  Capabilites
+						Set a uSER Access level
+
+
+
+
+
+MOUNT
+----------------------
+BOOT FILESYSTEM --> ROOT FILESYSTEM --> USER FILESYSTEM --> APP FILESYSTEM
+(Kernal)			
+
+
+HERE in mount = ROOT FILESYSTEM --> USER FILESYSTEM --> APP FILESYSTEM
+			 =======================================================
+
+
+# The kernel is a computer program at the core of a computer's operating system and generally has complete control over everything in the system. 
+
+
+
+
+How to install Docker?
+https://www.devopsschool.com/blog/docker-installation-and-configurations/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
