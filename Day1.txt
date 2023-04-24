@@ -216,3 +216,68 @@ CREATE -> START -> STOP -> START -> RESTART -> PAUSE -> UNPAUSE -> KILL -> REMOV
 
 difference between docker pause and unpuase?
 difference between docker stop and kill?
+===========================================================================
+PS is runnning					VM is running				Container is running
+As long as 						As long as					As long as 
+
+PID1 is running					PID1 is running				PID1 is running
+
+systemd							systemd						ANYTHING
+==========================================================================
+
+
+bin/bash
+bin/python
+
+RUN
+=================================================
+pull + create + start + attach
+
+RUN -d
+=================================================
+pull + create + start + do not attach
+
+attach == attached to a terminal of PID1 of the container.
+
+
+How to use container?
+====================================
+Go inside  == SHELL 
+
+exec - you can execute any executables inside a container.
+
+ 41  docker ps
+   42  docker exec 6d77829ff395 ls
+   43  docker exec 6d77829ff395 ps -eaf
+   44  docker exec 6d77829ff395 df -kh
+   45  docker exec 6d77829ff395 dddddd
+   46  docker ps
+   47  clear
+   48  docker ps
+   49  docker exec 955a249cbf71 ls
+   50  docker exec 955a249cbf71 ps -eaf
+
+docker exec -it 955a249cbf71 /bin/bash
+
+
+docker exec container
+
+Accesss from Outside === Network
+
+  65  docker inspect 955a249cbf71
+   66  docker ps
+   67  curl http://172.17.0.9
+   68  ping "172.17.0.9"
+   69  history
+
+
+docker run -it ubuntu /bin/bash
+COntrol + P + Q
+=======
+
+docker run -it -d ubuntu /bin/bash
+docker run -itd ubuntu /bin/bash
+
+
+
+
