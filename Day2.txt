@@ -165,4 +165,44 @@ QUESTION
   381  history
   382  clear
   383  find . -name get-docker.sh
+  
+  
+  DESIGN OF IMAGE
+  =========================
+  ubuntu + JAVA 5 + + apache2 + war app
+  
+  
+  391  docker run -itd ubuntu
+  392  docker ps
+  393  docker exec -it d3957ff5a55a /bin/bash
+  394  docker ps
+  395  ls
+  396  wget https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+  397  yum install wget -y
+  398  clear
+  399  ls
+  400  wget https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+  401  ls
+  402  chmod 755 sample.war
+  403  clear
+  404  ls
+  405  ls
+  406  docker ps
+  407  docker cp sample.war d3957ff5a55a:/opt
+  408  docker ps
+  409  docker exec d3957ff5a55a java
+  410  cler
+  411  cl;ear
+  412  clear
+  413  ls
+  414  docker exec d3957ff5a55a which apache2
+  415  docker exec d3957ff5a55a ls /opt/
+  416  docker commit -m"ub-java-apa-app" -a"rajesh" d3957ff5a55a managerapp
+  417  docker images
+  418  docker run -itd --name manager managerapp
+  419  docker ps
+  420  docker exec manager java
+  421  docker exec manager which apache2
+  422  docker exec manager ls /opt
+
 
