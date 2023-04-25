@@ -206,3 +206,38 @@ QUESTION
   422  docker exec manager ls /opt
 
 
+===============================================
+ 430  docker run -itd ubuntu
+  431  docker ps
+  432  docker exec -it edeccacf92eb
+  433  docker exec -it edeccacf92eb /bin/bash
+  434  docker commit -m"demo" -a"rajesh" edeccacf92eb demo
+  435  docker images
+  436  docker save demo.tar demo
+  437  docker save -o demo.tar demo
+  438  ls
+  439  clear
+  440  ls
+  441  docker ps
+  442  docker stop edeccacf92eb c0f6bbd40fc8 d3957ff5a55a
+  443  docker rm  edeccacf92eb c0f6bbd40fc8 d3957ff5a55a
+  444  clear
+  445  docker images
+  446  docker rmi demo
+  447  clear
+  448  ls
+  449  docker load -i demo.tar
+  450  docker images
+  451  history
+  452  clear
+  453  docker images
+  454  docker login
+  455  docker push demo
+  456  clear
+  457  docker images
+  458  docker tag demo devopsschools/aprildevopsschool
+  459  docker images
+  460  git push devopsschools/aprildevopsschool
+  461  docker push devopsschools/aprildevopsschool
+
+
