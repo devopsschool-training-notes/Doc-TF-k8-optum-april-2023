@@ -57,3 +57,112 @@ QUESTION
   272  clear
   273  which dockerd
   274  docker events
+  
+  ===================================================================
+  
+   279  docker container stop $(docker container ls -aq)
+  280  docker rm -vf $(docker ps -a -q)
+  281  clear
+  282  ls
+  283  docker
+  284  clear
+  285  ls
+  286  docker ps -a
+  287  docker images
+  288  docker rmi -f $(docker images -a -q)
+  289  clear
+  290  ls
+  291  docker images
+  292  docker info
+  293  cd /var/lib/docker/
+  294  ls
+  295  clear
+  296  ls
+  297  ls overlay2
+  298  cd overlay2
+  299  ls
+  300  pwd
+  301  du -sh .
+  302  docker pull ubuntu
+  303  ls
+  304  tree
+  305  ls e6182e6cba0f37fbf98ad724fc57e15ac4c3d49cbbef615792d012b02ef72364/diff/
+  306  clear
+  307  ls
+  308  docker rmi ubuntu
+  309  ls
+  310  du -sh .
+  311  docker pull httpd
+  312  ls
+  313  cler
+  314  clear
+  315  ls
+  316  du -h --max=depth=1
+  317  du -h --max-depth=1
+  318  cd ./b40813c5c12129c9758c134e6ab86d6231124851db458f7313476e63224e2f90/diff/
+  319  ls
+  320  find . -name http*
+  321  cd ..
+  322  ls
+  323  cd ..
+  324  ls
+  325  clear
+  326  ls
+  327  docker inspect httpd
+  328  clear
+  329  docker ps
+  330  df -h
+  331  docker run -d httpd
+  332  docker ps
+  333  df -h
+  334  ls
+  335  du -sh 09a5d44ceefe38d970cc4fc7dd1c92a2ee0d1b186f5e5ffa299f5f32532a51b7
+  336  du -h --max-depth=1
+  337  cd ./09a5d44ceefe38d970cc4fc7dd1c92a2ee0d1b186f5e5ffa299f5f32532a51b7/diff/
+  338  ls
+  339  cd -
+  340  cd ./09a5d44ceefe38d970cc4fc7dd1c92a2ee0d1b186f5e5ffa299f5f32532a51b7/merged/
+  341  ls
+  342  find . -name http*
+  343  clear
+  344  docker run -d httpd
+  345  df -kh
+  346  cd /var/lib/docker/overlay2/09a5d44ceefe38d970cc4fc7dd1c92a2ee0d1b186f5e5ffa299f5f32532a51b7
+  347  ls
+  348  docker ps
+  349  cd
+  350  ls
+  351  ls
+  352  docker cp get-docker.sh 5d8401e3f480/opt
+  353  docker cp get-docker.sh 5d8401e3f480:/opt
+  354  cd /var/lib/docker/
+  355  find . -name get-docker.sh
+  356  df -kh
+  357  clear
+  358  cd
+  359  ls
+  360  history
+  361  clear
+  362  docker ps
+  363  docker stop 48c13de05d49
+  364  docker rm 48c13de05d49
+  365  cler
+  366  clear
+  367  docker ps
+  368  docker commit -m"docfile" -a"rajesh" 5d8401e3f480 ram
+  369  docker images
+  370  docker history httpd
+  371  docker history ram
+  372  clear
+  373  ls
+  374  docker ps
+  375  docker stop 5d8401e3f480
+  376  docker rm 5d8401e3f480
+  377  clear
+  378  ls
+  379  cd /var/lib/docker/overlay2/
+  380  ls
+  381  history
+  382  clear
+  383  find . -name get-docker.sh
+
