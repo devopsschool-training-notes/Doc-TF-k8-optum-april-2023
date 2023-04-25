@@ -1,0 +1,59 @@
+
+https://www.devopsschool.com/blog/the-docker-command-line-complete-referenece/
+
+QUESTION
+- update	Update configuration of one or more containers
+- wait	Block until one or more containers stop, then print their exit codes
+
+ 223  docker ps
+  224  docker container stop $(docker container ls -aq)
+  225  docker rm -vf $(docker ps -a -q)
+  226  clear
+  227  docker ps -a
+  228  docke run -itd ubuntu
+  229  docker run -itd ubuntu
+  230  docker ps
+  231  ls
+  232  touch ramukaka.txt
+  233  docker cp ramukaka.txt 983599d231dc:/opt
+  234  docker exec 983599d231dc ls /opt
+  235  docker diff 983599d231dc
+  236  ls /opt
+  237  w
+  238  clear
+  239  docker ps
+  240  docker port 983599d231dc
+  241  docker run -d httpd
+  242  docker ps
+  243  docker port 6f1fed577437
+  244  docker run -d -p 80:80 httpd
+  245  docker run -d -p 80:80 httpd
+  246  docker run -d -p 81:80 httpd
+  247  docker run -d -p 82:80 httpd
+  248  clear
+  249  docker ps
+  250  docker port 9834ee1d4d79
+  251  curl http://localhost
+  252  curl http://localhost:81
+  253  curl http://localhost:82
+  254  curl http://localhost:83
+  255  clear
+  256  docker ps
+  257  docker ps
+  258  docker rename 983599d231dc ram
+  259  docker ps
+  260  clear
+  261  ls
+  262  docker ps
+  263  docker logs 983599d231dc
+  264  docker logs 9834ee1d4d79
+  265  clear
+  266  docker stats
+  267  cler
+  268  clear
+  269  docker ps
+  270  ps -eaf | grep containerd
+  271  docker top 4b692c385b28
+  272  clear
+  273  which dockerd
+  274  docker events
