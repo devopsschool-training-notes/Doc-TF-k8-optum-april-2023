@@ -1,0 +1,108 @@
+How many times we modify a code - 20 times a day == 20 commit
+==============================================================
+JENKINS
+============
+ON Push - trigger a job
+					------------
+					cmd ---> Build image..
+----------------------------------------------
+name of file - dockerfile
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar devops@rajeshkumar.xyz
+RUN apt-get update
+RUN apt-get install openjdk-11-jdk -y
+RUN apt-get install openjdk-11-jdk-headless -y 
+RUN apt-get install apache2 -y
+RUN apt-get install wget -y
+RUN wget https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+COPY index.html /opt/index.html
+
+$ docker build -t optum .
+
+FROM optum
+MAINTAINER Rajesh Kumar devops@rajeshkumar.xyz
+COPY index.html /opt/index.html
+
+$ docker build -f optumv1 -t optum:v1 .
+$ docker build -f optumv1 -t optumv1 .
+$ docker push optumv1
+
+FROM devopsschools/aprildevopsschool
+=====================================
+RULES OF DOCKERFILE
+----------------------------------
+each line of docker file WOULD create 1 LAYER.
+New layer would be created FROM a container from last layer
+
+
+FROM ubuntu
+MAINTAINER Ram ram 
+RUN touch  /opt/krish1.txt
+RUN touch  /opt/krish2.txt
+RUN touch  /opt/krish3.txt
+
+$ docker build -f ram -t ram .
+
+
+FROM ubuntu
+MAINTAINER Ram ram 
+RUN touch  /opt/krish1.txt
+RUN touch  /opt/krish2.txt
+RUN touch  /opt/krish3.txt
+
+$ docker build --rm=false -f ram -t ram . 
+
+
+FROM ubuntu
+MAINTAINER Ram ram 
+RUN touch  /opt/krish-radhe.txt
+COPY index.html /opt/index.html
+ENV JAVA_HOME /tmp
+RUN useradd ram
+USER ram
+WORKDIR /tmp
+$ docker build --rm=false -t ram-ram . 
+
+docker build --rm=false -t my-image .
+
+
+docker build --rm=false
+
+
+docker build --rm=false -t ram-ram-ram .
+
+
+FROM ubuntu
+MAINTAINER Ram ram krish 
+RUN touch  /opt/krish-radhe.txt
+COPY index.html /opt/index1.html
+COPY index.html /opt/index2.html
+COPY index.html /opt/index3.html
+ENV JAVA_HOME /tmp
+RUN useradd ram
+USER ram
+WORKDIR /tmp
+
+docker build --rm=false -f doc -t ram-ram-ram .
+=========================================================
+
+
+How to set PID1?
+
+CMD
+ENTRYPIOINT
+
+CMD vs ENTRYPOINT
+-----------------------
+CMD can be replaced during run time.
+ENTRYPOINT CAN NOT be replaced during run time.
+
+CMD passed to container of image with ENTRYPOINT.
+- cmd would be a param of ENTRYPOINT
+
+
+
+
+
+
