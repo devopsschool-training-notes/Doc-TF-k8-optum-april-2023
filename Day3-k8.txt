@@ -1,0 +1,18 @@
+54.162.201.53
+ubuntu
+rajesh123
+
+ 28  kubectl
+   29  clear
+   30  kubectl version
+   31  kubectl
+   32  clear
+   33  kubectl cluster-info
+   34  kubectl config view
+   35  ls ~/.kube/config
+   36  more ~/.kube/config
+   37  clear
+   38  ls
+   39  kubectl
+   40  kubectl api-resources
+$ kubectl get pods -A
