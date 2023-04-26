@@ -102,7 +102,7 @@ CMD passed to container of image with ENTRYPOINT.
 - cmd would be a param of ENTRYPOINT
 
 
-
+https://www.devopsschool.com/blog/example-and-sample-programs-of-dockerfile/
 
 
 
