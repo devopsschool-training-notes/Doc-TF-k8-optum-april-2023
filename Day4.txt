@@ -230,4 +230,46 @@ Statefulsets					= POD + DB
 
 
 https://www.devopsschool.com/blog/kubernetes-deployment-strategy-explained-with-example/
+==============================================
+Types of LB
+------------------
+	NETWORK == service
+	APP  == ingress
+
+
+service 
+===========================
+Loadbalance PODs
+SVC IP - Access only incide a cluster === ClustorIP Svc
+
+When a SVC need to EXPOSE at every node == Nodeport (ClusterIP + Exposing at Node)
+
+Loadbalancer
+		SVC created with ClustorIP
+		Svc get exposed at NodePort
+		k8 call ext lb and attach each node at LB
+
+
+kubectl expose deploy my-dep --port=80 --target-port=80
+
+kubectl expose deploy my-dep --port=80 --target-port=80 --type=NodePort --name=np
+
+kubectl expose deploy my-dep --port=80 --target-port=80 --type=LoadBalancer --name=lb
+
+ 437  kubectl get deploy
+  438  kubectl expose -h
+  439  clear
+  440  kubectl get svc
+  441  kubectl expose deploy my-dep --port=80 --target-port=80
+  442  kubectl get svc
+  443  kubectl describe svc my-dep
+  444  curl http://10.96.2.111
+  445  clear
+  446  kubectl get svc
+  447  kubectl expose deploy my-dep --port=80 --target-port=80 --type=NodePort --name=np
+  448  kubectl get svc
+
+
+
+
 
