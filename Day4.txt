@@ -78,14 +78,60 @@ spec:
   331  kubectl get pods
   332  kubectl get pods history
 
+==================================
+
+Troubleshooting and Debugging Commands:
+  describe      Show details of a specific resource or group of resources
+  logs          Print the logs for a container in a pod
+  attach        Attach to a running container
+  exec          Execute a command in a container
+  port-forward  Forward one or more local ports to a pod
+  cp            Copy files and directories to and from containers
+  auth          Inspect authorization
+
+
+
+	
+
+kubectl port-forward --address 0.0.0.0 pod/rajesh 8888:80
 
 
 
 
 
-
-
-
+  338  kubectl get pods
+  339  kubectl get pods -n=rajesh
+  340  kubectl logs rajesh
+  341  kubectl get pods -o wide
+  342  curl http://192.168.1.9
+  343  kubectl get pods -o wide
+  344  curl http://192.168.1.9
+  345  clear
+  346  kubectl logs rajesh
+  347  kubectl attach rajesh
+  348  kubectl logs rajesh
+  349  kubectl exec rajesh ls
+  350  clear
+  351  kubectl exec -it rajesh /bin/bash
+  352  kubectl -h
+  353  clear
+  354  kubectl exec -h
+  355  clear
+  356  kubectl get pods -o wide
+  357  ping 192.168.1.9
+  358  curl http://192.168.1.9
+  359  clear
+  360  ls
+  361  kubectl port-forward -h
+  362  clear
+  363  kubectl port-forward --address 0.0.0.0 pod/rajesh 8888:80
+  364  ls
+  365  docker cp pod.yaml rajesh:/tmp
+  366  kubectl cp pod.yaml rajesh:/tmp
+  367  kubectl exec rajesh ls /tmp
+  368  kubectl auth
+  369  kubectl auth can-i create pod
+  370  kubectl auth can-i create svc
 
 
 
