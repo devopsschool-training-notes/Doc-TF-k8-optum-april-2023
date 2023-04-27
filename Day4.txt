@@ -133,14 +133,101 @@ kubectl port-forward --address 0.0.0.0 pod/rajesh 8888:80
   369  kubectl auth can-i create pod
   370  kubectl auth can-i create svc
 
+=====================================================
+Deployment
+======================================================
+Replication + Controller + Versioning + Rollout + Rollback
 
 
+Replication == 1 X X???? == 5
+
+Controller == 5 POD === 5 POD
+
+Deployment
+			POD 
+				Imagev1 -> Imagev2 -> Imagev3
+
+kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 --replicas=3
 
 
+kubectl scale --replicas=5 deploy/my-dep
+===========================================
+
+Deployment --> Replication +  Controller
+			 ===========================
+					replicaset
 
 
+kubectl rollout undo deploy/my-dep --to-revision=1
+
+================================================
+POD							= 1 pod
+ReplicationController			= Replication + Controller v1
+ReplicaSets					= Replication + Controller v2
+Deployment					= Replication + Controller + Versioning + Rollout + Rollback
+DeamonSets					= 1 POD each NODE			
+Statefulsets					= POD + DB
 
 
+ 374  kubectl create -h
+  375  clear
+  376  kubectl create deployment -h
+  377  clear
+  378  kubectl get deploy
+  379  kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 --replicas=3
+  380  kubectl get deploy
+  381  kubectl get pods
+  382  kubectl delete pod rajesh
+  383  clear
+  384  kubectl get pods
+  385  kubectl describe deploy my-dep
+  386  clear
+  387  ls
+  388  kubectl scale -h
+  389  cler
+  390  clear
+  391  kubectl scale --replicas=5 deploy/my-dep
+  392  kubectl get pods
+  393  kubectl get deploy
+  394  kubectl scale --replicas=1 deploy/my-dep
+  395  kubectl get deploy
+  396  kubectl get pods
+  397  clear
+  398  kubectl get deploy
+  399  kubectl edit deploy my-dep
+  400  kubectl get deploy
+  401  kubectl get pods
+  402  kubectl delete pod my-dep-7d597cfb66-929f5 my-dep-7d597cfb66-c9vgv my-dep-7d597cfb66-g6rcr my-dep-7d597cfb66-j2sjz my-dep-7d597cfb66-jmgxk
+  403  kubectl get pods
+  404  kubectl describe pod my-dep-7d597cfb66-kf9r6
+  405  kubectl describe rs /my-dep-7d597cfb66
+  406  kubectl describe rs my-dep-7d597cfb66
+  407  clear
+  408  ls
+  409  kubectl rollout -h
+  410  kubectl rollout history deploy my-dep
+  411  cler
+  412  clear
+  413  kubectl edit deploy my-dep
+  414  kubectl rollout history deploy my-dep
+  415  kubectl get pods
+  416  kubectl get pods -o wide
+  417  curl http://192.168.1.62
+  418  kubectl rollout history deploy my-dep
+  419  kubectl rollout -h
+  420* kubectl rollout un
+  421  clear
+  422  kubectl rollout undo deploy/my-dep --to-revision=1
+  423  kubectl rollout history deploy my-dep
+  424  kubectl get pods -o wide
+  425  curl http://192.168.1.72
+  426  clear
+  427  kubectl get pods -A
+  428  kubectl get pods -A -o wide
+  429  kubectl get pods -A
+  430  kubectl get ds
+  431  kubectl get ds -nkube-system
 
 
+https://www.devopsschool.com/blog/kubernetes-deployment-strategy-explained-with-example/
 
