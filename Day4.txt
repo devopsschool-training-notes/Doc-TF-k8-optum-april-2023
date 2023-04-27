@@ -1,0 +1,44 @@
+CRUD
+
+Create
+			cmd
+				create
+			yaml
+				create -f yaml
+READ
+			cmd
+				get
+				describe
+			yaml
+				get -f yaml
+UPDTE
+			cmd
+				edit
+			yaml
+				apply -f yaml
+DELETE
+			cmd	
+				delete
+			yaml
+				delete -f yaml
+=================================================================================
+
+ 257  kubectl get nodes
+  258  kubectl
+  259  clear
+  260  kubectl get ns
+  261  kubectl get pods -n=kube-system
+  263  kubectl create ns rajesh
+  265  kubectl get ns
+  266  kubectl describe ns rajesh
+  267  kubectl edit ns rajesh
+  268  kubectl describe ns rajesh
+  269  kubectl delete ns rajesh
+  270  kubectl get ns
+  271  hsitory
+
+
+
+
+
+
