@@ -37,6 +37,62 @@ DELETE
   270  kubectl get ns
   271  hsitory
 
+==============================================================
+
+POD
+------------------------------
+
+
+
+
+
+
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rajesh
+  labels:
+    app: helloworld
+spec:
+  containers:
+  - name: devopsschool1
+    image: scmgalaxy/nginx-devopsschoolv1
+    ports:
+    - name: nginx-port
+      containerPort: 80
+
+
+ 316  kubectl create -f pod.yaml -n=rajesh
+  317  kubectl create -f pod.yaml
+  318  kubectl get pods
+  321  kubectl get pods -n=rajesh
+  322  kubectl create -f pod.yaml
+
+  327  vi pod.yaml
+  328  kubectl apply -f pod.yaml
+  329  kubectl delete -f pod.yaml
+  330  kubectl delete -f pod.yaml -n=rajesh
+  331  kubectl get pods
+  332  kubectl get pods history
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
